@@ -1,15 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-   public PlayerController PlayerController;
-   private string[] animArray = {"idle", "run", "jump", "double_jump", "fall"};
-   void Update() {
-      // if (Input.GetMouseButtonDown(0)) {
-      //    Debug.Log("Mouse Input");
-      //    PlayerController.GetToPlayAnim(animArray[1]);
-      // }
-   }
+    public GameOver gameoverSceen;
+    public bool isOver;
+
+    void Start()
+    {
+        isOver = false;
+    }
+
+    public void setOver(bool state)
+    {
+        isOver = state;
+        gameoverSceen.SetActive(true);
+    }
+
+
 }
 
