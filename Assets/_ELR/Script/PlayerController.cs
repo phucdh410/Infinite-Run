@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         isOver = false;
     }
     private void Update() {
-        if (Input.GetMouseButtonDown(0)){
+        if (Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Space)){
             if (IsGrounded){
                 Jump();
                 _canDoubleJump = true;
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             isOver = true;
-            PlayerAnimator.Play(stateName: "disappear");
+            PlayerAnimator.Play(stateName: "hit");
             //gameObject.SetActive(false);
         }
     }

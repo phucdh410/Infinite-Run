@@ -29,7 +29,6 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
             enemyGenerator.setIsOver();
         }
     }
