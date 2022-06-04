@@ -38,15 +38,15 @@ public class AIOverlapDectector : MonoBehaviour
         StartCoroutine(DetectCoroutine());
     }
 
-    private void Update()
-    {
-        duration -= Time.deltaTime;
-        if (duration <= 0)
-        {
-            _detectorOrigin.localScale.x *= (-1);
-            duration = 3;
-        }
-    }
+    //private void Update()
+    //{
+    //    duration -= Time.deltaTime;
+    //    if (duration <= 0)
+    //    {
+    //        _detectorOrigin.localScale.x *= (-1);
+    //        duration = 3;
+    //    }
+    //}
 
     private IEnumerator DetectCoroutine(){
         yield return new WaitForSeconds(DetectionDelay);

@@ -2473,8 +2473,8 @@ MonoBehaviour:
   IsGrounded: 0
   Velocity: {x: 0, y: 0}
   maxXVelocity: 1000
-  acceleration: 100
-  maxAcceleration: 100
+  acceleration: 150
+  maxAcceleration: 150
   Rigid2d: {fileID: 1669887268}
   isOver: 0
 --- !u!50 &1669887268
