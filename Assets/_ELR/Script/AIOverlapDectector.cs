@@ -21,6 +21,7 @@ public class AIOverlapDectector : MonoBehaviour
     public Color IdleColor = Color.green;
     public Color DetectedColor = Color.red;
     public bool ShowGizmos = true;
+    private float duration = 3f;
     
     [Header("Target")]
     private GameObject _target;
@@ -35,6 +36,16 @@ public class AIOverlapDectector : MonoBehaviour
 
     private void Start(){
         StartCoroutine(DetectCoroutine());
+    }
+
+    private void Update()
+    {
+        duration -= Time.deltaTime;
+        if (duration <= 0)
+        {
+            _detectorOrigin.localScale.x *= (-1);
+            duration = 3;
+        }
     }
 
     private IEnumerator DetectCoroutine(){
@@ -65,6 +76,10 @@ public class AIOverlapDectector : MonoBehaviour
             transform.GetComponent<Animator>().Play("run");
             //Debug.Log(DirectionToTarget);
             //DirectionToTarget.normalized
+        }
+        else
+        {
+            transform.GetComponent<Animator>().Play("idle");
         }
     }
 }
