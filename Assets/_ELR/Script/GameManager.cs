@@ -3,29 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     //public bool isOver;
-    public int score;
+    public int score = 0;
     public TextMeshProUGUI txt;
-    //void Start()
-    //{
-    //    isOver = false;
-    //}
+  
+  
     void Update()
     {
-        updateScore();
+        txt.text = "Score " + score.ToString();
     }
 
     public void setScore()
     {
         score++;
     }
-        
-    public void updateScore()
-    {
-        txt.text = "Score: " + score;
+    
+    public void ChangeScene(){
+        SceneManager.LoadScene("SampleScene");
     }
-
 }
 

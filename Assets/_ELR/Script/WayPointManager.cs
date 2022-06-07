@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WayPointManager : MonoBehaviour {
     public Transform[] Waypoints;
-    private float _movementSpeed = 50f;
+    private float _movementSpeed = 10f;
     private int _wayPointIndex = 0;
 
     private void Start() {
@@ -16,11 +16,9 @@ public class WayPointManager : MonoBehaviour {
     }
 
     private void Move() {
-        //if (_wayPointIndex <= Waypoints.Length - 1) {
             transform.position = Vector2.MoveTowards(transform.position,
                 Waypoints[_wayPointIndex].transform.position,
                 _movementSpeed * Time.deltaTime);
-        //}
 
         if (transform.position == Waypoints[_wayPointIndex].transform.position) {
             _wayPointIndex++;
